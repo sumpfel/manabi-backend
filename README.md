@@ -21,7 +21,7 @@ The high-performance, asynchronous FastAPI backend powering the **Manabi** ecosy
 
 ## 🛠️ Tech Stack
 - **Framework**: [FastAPI](https://fastapi.tiangolo.com) (Python 3.10+)
-- **Database**: [SQLite](https://sqlite.org) (with SQLAlchemy/SQLModel support)
+- **Database**: **[MariaDB](https://mariadb.org/)** (Required for production/community features)
 - **Security**: [Jose (JWT)](https://python-jose.readthedocs.io/en/latest/) for authentication
 - **Server**: [Uvicorn](https://www.uvicorn.org/) ASGI server
 
@@ -29,6 +29,7 @@ The high-performance, asynchronous FastAPI backend powering the **Manabi** ecosy
 
 ### Prerequisites
 - Python 3.10 or higher
+- **MariaDB Server** (Running and accessible)
 - `pip` (Python package manager)
 
 ### Installation
@@ -46,7 +47,12 @@ The high-performance, asynchronous FastAPI backend powering the **Manabi** ecosy
    pip install -r requirements.txt
    ```
 4. Configuration:
-   - Create a `.env` file from the provided context (requires database setup).
+   - Create a `.env` file in the root. **This is critical** for database connectivity.
+   - Example `.env` contents:
+     ```env
+     DATABASE_URL=mysql+pymysql://user:password@localhost:3306/manabi_db
+     SECRET_KEY=your_secret_key
+     ```
 5. Run the server:
    ```bash
    uvicorn main:app --reload --host 0.0.0.0 --port 8000
