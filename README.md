@@ -1,0 +1,63 @@
+# 🚀 Manabi-Backend (学び — Back-End)
+
+The high-performance, asynchronous FastAPI backend powering the **Manabi** ecosystem. It manages community decks, user synchronization, AI-assisted vocabulary generation, and grammar unit management.
+
+## 🌟 Key Features
+
+### 🏢 Community Deck Hub
+- **Database Scaling**: High-speed access to JLPT and official language decks.
+- **User Shares**: Publish and discover decks shared by the Manabi community.
+- **Versioning**: Automatic synchronization of deck updates between client and server.
+
+### 🤖 AI Proxy & Generation
+- **Token Management**: Securely handles API keys for cloud AI providers.
+- **Deck Seeding**: Advanced scripts for auto-generating language-accurate vocabulary decks.
+- **FastAPI Core**: Minimal latency, high concurrency during AI-intensive tasks.
+
+### 🔄 Data Synchronization
+- **Auth Flow**: Secure registration and login for community access.
+- **Profile Management**: Stores user progress and statistics in a unified cloud profile.
+- **Conflict Resolution**: Smart merging of local and remote learning progress.
+
+## 🛠️ Tech Stack
+- **Framework**: [FastAPI](https://fastapi.tiangolo.com) (Python 3.10+)
+- **Database**: [SQLite](https://sqlite.org) (with SQLAlchemy/SQLModel support)
+- **Security**: [Jose (JWT)](https://python-jose.readthedocs.io/en/latest/) for authentication
+- **Server**: [Uvicorn](https://www.uvicorn.org/) ASGI server
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.10 or higher
+- `pip` (Python package manager)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:sumpfel/manabi-backend.git
+   ```
+2. Set up a virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Configuration:
+   - Create a `.env` file from the provided context (requires database setup).
+5. Run the server:
+   ```bash
+   uvicorn main:app --reload --host 0.0.0.0 --port 8000
+   ```
+
+## 📂 Project Structure
+- `main.py`: Entry point and application setup
+- `api/routers/`: Modular route definitions (Auth, AI, Community, Sync)
+- `core/`: Core security and configuration logic
+- `create_db.py`: Database schema and migration script
+- `seed_*.py`: Data initialization and deck generation scripts
+
+---
+Powering the next generation of Japanese language learners.
