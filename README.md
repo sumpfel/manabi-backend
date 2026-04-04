@@ -59,6 +59,10 @@ The high-performance, asynchronous FastAPI backend powering the **Manabi** ecosy
 
 5. Run the server:
    ```bash
+   # Option 1: Using the python script (uses settings from main.py)
+   python main.py
+
+   # Option 2: Using uvicorn directly
    uvicorn main:app --reload --host 0.0.0.0 --port 8000
    ```
 
