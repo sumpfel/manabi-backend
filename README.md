@@ -50,10 +50,11 @@ The high-performance, asynchronous FastAPI backend powering the **Manabi** ecosy
    - Create a `.env` file in the root. **This is critical** for database connectivity and security.
    - Use the following template and replace the values in brackets:
      ```env
-     DATABASE_URL=mysql+pymysql://<DB_USER>:<DB_PASSWORD>@<DB_HOST>:<DB_PORT>/<DB_NAME>
-     SECRET_KEY=<YOUR_SUPER_SECRET_KEY>
-     ALGORITHM=HS256
-     ACCESS_TOKEN_EXPIRE_MINUTES=30
+     DB_HOST=<YOUR_MARIADB_HOST>
+     DB_PORT=<YOUR_MARIADB_PORT>
+     DB_USER=<YOUR_MARIADB_USER>
+     DB_PASSWORD=<YOUR_MARIADB_PASSWORD>
+     DB_NAME=<YOUR_MARIADB_DATABASE_NAME>
      ```
 
 5. Run the server:
