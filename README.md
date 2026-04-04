@@ -47,12 +47,15 @@ The high-performance, asynchronous FastAPI backend powering the **Manabi** ecosy
    pip install -r requirements.txt
    ```
 4. Configuration:
-   - Create a `.env` file in the root. **This is critical** for database connectivity.
-   - Example `.env` contents:
+   - Create a `.env` file in the root. **This is critical** for database connectivity and security.
+   - Use the following template and replace the values in brackets:
      ```env
-     DATABASE_URL=mysql+pymysql://user:password@localhost:3306/manabi_db
-     SECRET_KEY=your_secret_key
+     DATABASE_URL=mysql+pymysql://<DB_USER>:<DB_PASSWORD>@<DB_HOST>:<DB_PORT>/<DB_NAME>
+     SECRET_KEY=<YOUR_SUPER_SECRET_KEY>
+     ALGORITHM=HS256
+     ACCESS_TOKEN_EXPIRE_MINUTES=30
      ```
+
 5. Run the server:
    ```bash
    uvicorn main:app --reload --host 0.0.0.0 --port 8000
